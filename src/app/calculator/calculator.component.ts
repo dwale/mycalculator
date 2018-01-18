@@ -9,9 +9,8 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 export class CalculatorComponent implements OnInit {
   operation: string[] = ['', '', ''];
   display: string = '';
-  subDisplay:string = ''
-  activeBuildingNumber:string = '';
-
+  // subDisplay:string = ''
+  activeBuildingNumber: string = '';
 
   constructor(private http: HttpClient) {
   }
@@ -40,31 +39,17 @@ export class CalculatorComponent implements OnInit {
         }
       }
     );
-    const req = this.http.post('http://jsonplaceholder.typicode.com/posts', {
-      title: 'foo',
-      body: 'bar',
-      userId: 1
-    })
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log('Error occurred');
-        }
-      );
   }
-
   buildNumber(num: string): void {
     this.activeBuildingNumber += num;
     // if operator is defined, set second variable
-    console.log('Active: ', this.activeBuildingNumber);
     if (this.operation[1].length) {
       this.operation[2] = this.activeBuildingNumber;
     } else {
       this.operation[0] = this.activeBuildingNumber;
-      this.subDisplay = '';
+        // this.subDisplay = '';
     }
+
     this.renderDisplay();
   }
 
@@ -72,12 +57,10 @@ export class CalculatorComponent implements OnInit {
   renderDisplay(): void {
     this.display = this.operation.join(' ');
   }
-
-  //
   selectOperator(operator: string): void {
     if (!this.operation[0].length) {
       this.displayError();
-      this.display = 'Enter number';
+      // this.subDisplay = 'Enter number before operation';
       return;
     }
     this.operation[1] = operator;
@@ -90,14 +73,25 @@ export class CalculatorComponent implements OnInit {
       const val = this.calculateResult();
 
       this.display = '' + val;
-      this.subDisplay = this.operation.join(' ');
+      // this.subDisplay = this.operation.join(' ');
       this.activeBuildingNumber = this.display;
+        console.log(this.activeBuildingNumber);
+        this.loop();
+      this.operation[0] = this.activeBuildingNumber;
+      this.display = this.activeBuildingNumber;
+
     }
   }
-
+  loop(): void {
+    this.display = '';
+    // this.subDisplay = '';
+    this.operation = ['', '', ''];
+  }
   resetOperation(): void {
     this.operation = ['', '', ''];
     this.activeBuildingNumber = '';
+    this.display = '';
+    // this.subDisplay = '';
   }
 
   displayError(): void {
@@ -107,7 +101,7 @@ export class CalculatorComponent implements OnInit {
   confirmInputs(): boolean {
     if (!this.operation[0].length) {
       this.displayError();
-      this.display = 'Enter First Number';
+      this.display = null;
       return false;
     } else if (!this.operation[1].length) {
       this.displayError();
@@ -120,11 +114,7 @@ export class CalculatorComponent implements OnInit {
     }
     return true;
   }
-  clear(): number {
-    this.operation = ['', '', ''];
-    this.activeBuildingNumber = '';
-    return 0;
-  }
+
   calculateResult(): number {
     switch (this.operation[1]) {
       case '*':
@@ -136,6 +126,8 @@ export class CalculatorComponent implements OnInit {
       case '/':
         return parseFloat(this.operation[0]) / parseFloat(this.operation[2]);
     }
+
+
   }
 
 
