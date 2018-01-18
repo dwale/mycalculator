@@ -1,1 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: #f0f0f0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 620px;
+  margin: 0 auto;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#calculator {
+  font-size: 1.2em;
+  display: block;
+  width: 53%;
+  margin:0 auto;
+  padding: 20px;
+  border: 2px solid rgba(0,0,0,0.125);
+  background:linear-gradient(80deg,#C0C0C0, #fff);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d3d3d3), color-stop(1, #fff));
+  background: -ms-linear-gradient(bottom, #d3d3d3, #fff);
+  background: -moz-linear-gradient(80deg, #d3d3d3 0%, #fff 100%);
+  background: -o-linear-gradient(#fff, #d3d3d3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#003b34', GradientType=0);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: inherit;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+#calculator button,
+#calculator input,
+#calculator #total {
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  padding: 12px;
+  font-family: 'Helvetica Neue LT Pro', 'Helvetica', sans-serif;
+}
+#calculator button .exponent,
+#calculator input .exponent,
+#calculator #total .exponent {
+  font-size: 0.6em;
+  position: absolute;
+}
+#calculator button .denominator,
+#calculator input .denominator,
+#calculator #total .denominator {
+  position: relative;
+}
+#calculator button .denominator .denom-top,
+#calculator input .denominator .denom-top,
+#calculator #total .denominator .denom-top {
+  font-size: 0.75em;
+  position: absolute;
+  left: -8px;
+}
+#calculator button .denominator .denom-slash,
+#calculator input .denominator .denom-slash,
+#calculator #total .denominator .denom-slash {
+  padding: 0 2px;
+}
+#calculator button .denominator .denom-btm,
+#calculator input .denominator .denom-btm,
+#calculator #total .denominator .denom-btm {
+  font-size: 0.75em;
+  position: absolute;
+  bottom: 0;
+}
+#calculator .display {
+  width: 100%;
+}
+#calculator .display #total {
+  width: 100%;
+  margin: 50px auto 0;
+  height: 100%;
+  display: block;
+  -moz-background-clip: inherit;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 2.9em;
+  font-weight: bold;
+  color: #080808;
+  text-shadow: 1px 1px 0 #fff;
+  background: #fff;
+  text-align: right;
+}
+#calculator #the-buttons {
+  width: 100%;
+}
+#calculator #the-buttons #extra-buttons {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+#calculator #the-buttons .button-row {
+  width: 100%;
+  zoom: 1;
+}
+#calculator #the-buttons .button-row:before,
+#calculator #the-buttons .button-row:after {
+  content: "";
+  display: table;
+}
+#calculator #the-buttons .button-row:after {
+  clear: both;
+}
+#calculator #the-buttons .button-row:before,
+#calculator #the-buttons .button-row:after {
+  content: "";
+  display: table;
+}
+#calculator #the-buttons .button-row:after {
+  clear: both;
+}
+#calculator #the-buttons .button-row button {
+  width: 22.7%;
+  margin: 1.0%;
+  float: left;
+  background: #dfdfdf;
+  background:linear-gradient(80deg,#C0C0C0, #fff);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d3d3d3), color-stop(1, #fff));
+  background: -ms-linear-gradient(bottom, #d3d3d3, #fff);
+  background: -moz-linear-gradient(80deg, #d3d3d3 0%, #fff 100%);
+  background: -o-linear-gradient(#fff, #d3d3d3);
+  border-style: solid;
+  border-color: #333;
+  border-width: 0 1px 1px 0;
+  color: #000;
+  cursor: pointer;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: inherit;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#calculator #the-buttons .button-row button:last-child {
+  margin-right: 0;
+  float: right;
+}
+#calculator #the-buttons .button-row button:hover,
+#calculator #the-buttons .button-row button.hovering {
+  border-width: 1px 0 0 1px;
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#calculator #the-buttons #calc_zero {
+  width: 48%;
+}
+
+#calculator #the-buttons .calc_op {
+  font-size: 1.3em;
+  padding: 8.6px !important;
+}
+#calculator #the-buttons .calc_int {
+  font-weight: bold;
+}
+
+#calculator #the-buttons #calc_eval {
+  background: #dfdfdf;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #cdcdcd), color-stop(1, #dfdfdf));
+  background: -ms-linear-gradient(bottom, #cdcdcd, #dfdfdf);
+  background: -moz-linear-gradient(to bottom right, #cdcdcd , #dfdfdf);
+  background: -o-linear-gradient(#dfdfdf, #cdcdcd);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#cdcdcd', GradientType=0);
+  color: #00544b;
+  text-shadow: 1px 1px 0 #fff;
+}
