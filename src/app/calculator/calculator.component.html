@@ -3,20 +3,16 @@
     <div class="display">
      <span id="total">&nbsp;
        {{ display }}
-       <!--<div class="sub">{{ subDisplay }}</div>-->
+       <div class="sub">{{ subDisplay }}</div>
      </span>
     </div>
     <div id="the-buttons">
       <div id="extra-buttons" class="button-row">
-        <button id="calc_denom" value="1/x" ><span class="denominator"><span class="denom-top" >1</span><span class="denom-slash">/</span><span class="denom-btm">x</span></span></button>
-        <button id="calc_sqrt" value="&radic;" >&radic;</button>
-        <button id="calc_square" value="x2" >x<span class="exponent">2</span></button>
-        <button id="calc_powerof" class="calc_op" value="^" >y<span class="exponent">x</span></button>
       </div>
       <div class="button-row clearfix">
         <button id="calc_clear" value="C/E" (click)="resetOperation()" >C/E</button>
-        <button id="calc_back" value="&larr;" >&larr;</button>
-        <button id="calc_neg" value="-/+" >-/+</button>
+        <button id="calc_square" value="x2" (click)="sendPower()">x<span class="exponent">2</span></button>
+        <button id="calc_sqrt" value="squareroot" (click)="sendRoot()" >&radic;</button>
         <button class="calc_op" value="/" (click)="selectOperator('/')">&divide;</button>
       </div>
       <div class="button-row clearfix">
@@ -40,7 +36,7 @@
       <div class="button-row clearfix">
         <button id="calc_zero" class="calc_int" value="0" (click)="buildNumber('0')">0</button>
         <button id="calc_decimal" value="." (click)="buildNumber('.')">.</button>
-        <button id="calc_eval" value="=" (click)="showResult()">=</button>
+        <button id="calc_eval" value="=" (click)="sendValue()">=</button>
       </div>
     </div>
   </div>
