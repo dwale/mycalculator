@@ -1,6 +1,6 @@
 # MyCalculator
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
-A calculator designed with Angular 5 with a Java based backend and uses the Swagger APIa it API
+A calculator designed with Angular 5 with a Java based backend and uses the Swagger API as its API
 <b>To use, utilize your CLI</b>
 1) npm install
 2) Clone using the git clone https://github.com/dwale/mycalculator.git
