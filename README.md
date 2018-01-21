@@ -8,13 +8,14 @@ A calculator designed with Angular 5 with a Java based backend and uses the Swag
 
 The link for the backend code is https://github.com/dwale/myCalculatorBackend.git
 
-To use , you will need to create a database on your system named calculator using a local server like XAMPP or WAMP.
-Then Start Apache and MySQL
-Package the backend in a .jar file using build automation tools like Maven or Jenkins
+To use , you will need to create a database on your system named calculator using a local server like XAMPP or WAMP.<br/>
+Then Start Apache and MySQL<br/>
+Package the backend in a .jar file using build automation tools like Maven or Jenkins<br/>
 Then in the folder which contains the .jar, create a file in the .yaml file type for the configuration file of the database and copy the following code
 
 
 # Database settings.
+<pre>
 database:
   driverClass: org.mariadb.jdbc.Driver
   user: root
@@ -29,6 +30,6 @@ server:
   rootPath: /api/v1
 config:
   appBaseUrl: http://localhost:8080/api/v1
-  
-Then navigate to the location of the .jar file from your CLI
-and run this command Java -jar calculator.snapshot server dev.config.yaml,
+  </pre><br/>
+Then navigate to the location of the .jar file from your CLI<br/>
+and run this command Java -jar calculator.snapshot server dev.config.yaml
