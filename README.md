@@ -1,27 +1,34 @@
 # MyCalculator
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
+A calculator designed with Angular 5 with a Java based backend and uses the Swagger APIa it API
+<b>To use, utilize your CLI</b>
+1) npm install
+2) Clone using the git clone https://github.com/dwale/mycalculator.git
+3) npm start
 
-## Development server
+The link for the backend code is https://github.com/dwale/myCalculatorBackend.git
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To use , you will need to create a database on your system named calculator using a local server like XAMPP or WAMP.
+Then Start Apache and MySQL
+Package the backend in a .jar file using build automation tools like Maven or Jenkins
+Then in the folder which contains the .jar, create a file in the .yaml file type for the configuration file of the database and copy the following code
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Database settings.
+database:
+  driverClass: org.mariadb.jdbc.Driver
+  user: root
+  password:
+  url: jdbc:mariadb://localhost/calculator
+swagger:
+  resourcePackage: com.calculator.api.resource
+  uriPrefix: /api/v1
+  title: Calculator API Endpoints
+  description: This is the listing of all the API endpoints of Calculator back end. It lists resource details, operations supported, access methods and request/response format.
+server:
+  rootPath: /api/v1
+config:
+  appBaseUrl: http://localhost:8080/api/v1
+  
+Then navigate to the location of the .jar file from your CLI
+and run this command Java -jar calculator.snapshot server dev.config.yaml,
