@@ -6,7 +6,7 @@ A calculator designed with Angular 5 with a Java based backend and uses the Swag
 2) Clone using the git clone https://github.com/dwale/mycalculator.git
 3) npm start
 
-The link for the backend code is https://github.com/dwale/myCalculatorBackend.git
+The link for the backend code is https://github.com/dwale/test-api-backend.git
 
 To use , you will need to create a database on your system named calculator using a local server like XAMPP or WAMP.<br/>
 Then Start Apache and MySQL<br/>
