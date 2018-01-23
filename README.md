@@ -2,9 +2,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 A calculator designed with Angular 5 with a Java based backend and uses the Swagger API as its API
 <b>To use, utilize your CLI</b>
-1) npm install
-2) Clone using the git clone https://github.com/dwale/mycalculator.git
-3) npm start
+1) Clone using the `git clone https://github.com/dwale/mycalculator.git`
+2) npm install
+3) ng serve
 
 The link for the backend code is https://github.com/dwale/test-api-backend.git
 
@@ -32,4 +32,4 @@ config:
   appBaseUrl: http://localhost:8080/api/v1
   </pre><br/>
 Then navigate to the location of the .jar file from your CLI<br/>
-and run this command Java -jar calculator.snapshot server dev.config.yaml
+and run this command `Java -jar calculator.snapshot server dev.config.yaml`
