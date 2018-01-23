@@ -32,4 +32,4 @@ config:
   appBaseUrl: http://localhost:8080/api/v1
   </pre><br/>
 Then navigate to the location of the .jar file from your CLI<br/>
-and run this command Java -jar calculator.snapshot server dev.config.yaml
+and run this command `Java -jar calculator.snapshot server dev.config.yaml`
